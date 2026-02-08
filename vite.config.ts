@@ -1,7 +1,4 @@
-// vite.config.ts
-export default {
-  base: '/Aquaiwebsite/', // Обязательно с косой чертой в конце!
-}
+
   import { defineConfig } from 'vite';
   import react from '@vitejs/plugin-react-swc';
   import path from 'path';

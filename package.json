@@ -1,6 +1,4 @@
-"scripts": {
-  "build": "vite build && cp -r dist/* ."
-}
+
   {
       "name": "AquaAi Website and App Design",
       "version": "0.1.0",
