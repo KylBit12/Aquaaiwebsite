@@ -92,7 +92,7 @@ export function PricingPage() {
     <div className="min-h-screen py-20 px-4 md:px-6">
       {/* Animated Background */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
-        {[...Array(15)].map((_, i) => (
+        {[...Array(8)].map((_, i) => (
           <motion.div
             key={i}
             className="absolute w-2 h-2 bg-cyan-400/20 rounded-full"
@@ -101,8 +101,8 @@ export function PricingPage() {
               y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1000),
             }}
             animate={{
-              y: [null, Math.random() * window.innerHeight],
-              x: [null, Math.random() * window.innerWidth],
+              y: [null, Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1000)],
+              x: [null, Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000)],
             }}
             transition={{
               duration: Math.random() * 15 + 10,

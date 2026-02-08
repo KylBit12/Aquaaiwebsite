@@ -43,7 +43,7 @@ function Particle({ index }: ParticleProps) {
 export function ParticleBackground() {
   return (
     <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
-      {[...Array(50)].map((_, i) => (
+      {[...Array(30)].map((_, i) => (
         <Particle key={i} index={i} />
       ))}
     </div>
@@ -51,7 +51,7 @@ export function ParticleBackground() {
 }
 
 export function FloatingIcons() {
-  const icons = ['🎤', '💬', '🚀', '⚡', '🌟', '💻', '🔊', '🎯'];
+  const icons = ['🎤', '💬', '🚀', '⚡', '🌟', '💻'];
 
   return (
     <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
@@ -64,8 +64,8 @@ export function FloatingIcons() {
             y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1000),
           }}
           animate={{
-            y: [null, Math.random() * window.innerHeight],
-            x: [null, Math.random() * window.innerWidth],
+            y: [null, Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1000)],
+            x: [null, Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000)],
             rotate: [0, 360],
             scale: [1, 1.5, 1],
           }}

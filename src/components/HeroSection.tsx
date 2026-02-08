@@ -58,18 +58,18 @@ export function HeroSection() {
         />
 
         {/* Additional floating orbs */}
-        {[...Array(5)].map((_, i) => (
+        {[...Array(3)].map((_, i) => (
           <motion.div
             key={i}
             className="absolute w-32 h-32 bg-purple-500/10 rounded-full blur-2xl"
             animate={{
               x: [
-                Math.random() * window.innerWidth,
-                Math.random() * window.innerWidth,
+                Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000),
+                Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000),
               ],
               y: [
-                Math.random() * window.innerHeight,
-                Math.random() * window.innerHeight,
+                Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1000),
+                Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1000),
               ],
             }}
             transition={{

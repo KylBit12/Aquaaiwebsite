@@ -20,7 +20,7 @@ import {
 } from 'lucide-react';
 
 export function DownloadPage() {
-  const [selectedPlatform, setSelectedPlatform] = useState<'windows' | 'macos' | 'linux'>('windows');
+  const [selectedPlatform, setSelectedPlatform] = useState<'windows' | 'macos' | 'linux' | 'android' | 'ios'>('windows');
   const [downloadCount, setDownloadCount] = useState(156234);
   const [activeUsers, setActiveUsers] = useState(98456);
 
@@ -63,6 +63,26 @@ export function DownloadPage() {
       requirements: 'Linux Kernel 5.10+',
       gradient: 'from-orange-500 to-red-500',
     },
+    {
+      id: 'android',
+      name: 'Android',
+      icon: Smartphone,
+      versions: ['Android 10+', 'Android 11+', 'Android 12+'],
+      size: '85 MB',
+      version: '2.1.0',
+      requirements: 'Android 10.0 или новее',
+      gradient: 'from-green-500 to-emerald-500',
+    },
+    {
+      id: 'ios',
+      name: 'iOS',
+      icon: Tablet,
+      versions: ['iOS 15+', 'iOS 16+', 'iPadOS 15+'],
+      size: '92 MB',
+      version: '2.1.0',
+      requirements: 'iOS 15.0 или новее',
+      gradient: 'from-indigo-500 to-blue-500',
+    },
   ];
 
   const features = [
@@ -85,17 +105,17 @@ export function DownloadPage() {
     <div className="min-h-screen py-20 px-4 md:px-6">
       {/* Animated Background */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
-        {[...Array(20)].map((_, i) => (
+        {[...Array(10)].map((_, i) => (
           <motion.div
             key={i}
             className="absolute w-2 h-2 bg-cyan-400/20 rounded-full"
             initial={{
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight,
+              x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000),
+              y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1000),
             }}
             animate={{
-              y: [null, Math.random() * window.innerHeight],
-              x: [null, Math.random() * window.innerWidth],
+              y: [null, Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1000)],
+              x: [null, Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000)],
             }}
             transition={{
               duration: Math.random() * 10 + 10,
